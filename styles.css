@@ -1,5 +1,5 @@
 body {
-	margin: auto 0;
+	margin: 0 auto;
 	font-family: 'Oswald';
 	font-size: 22px;
 }
@@ -7,10 +7,11 @@ body {
 Nav bar 
 **********************************************************/
 .menu{
-    /*display:flex;*/
     
     font-size:0.7em;
     background-color: #080708;
+    margin: 0;
+    width:100%;
    
    
 }
@@ -21,24 +22,34 @@ Nav bar
 	list-style: none;
 	text-align: center;
 	text-transform: uppercase;
-	align-items: center;
+	
 	text-decoration: none;
 	
 	color:#fff;
+	
 }
 
 
 .main-nav li {
 	padding:10px;
-	margin:10px;
-	min-width: 100px;
-
 	
+	min-width: 70px;
 	border-radius: 200px;
 	align-items: center;
 	color: #FFF;
 	font-size: 1.2em;
 }
+
+@media only screen and (max-width: 600px) {
+    .main-nav{
+    	display:inline-block;
+        width:100%;
+        padding:0;
+
+    }
+
+
+ }
 
 .main-nav a
 {
@@ -59,7 +70,9 @@ a:hover li{
 
 }
 
-
+/***********************************************************************
+ *  Main Panel
+ **********************************************************************/
 
 .main {
 	display:flex;
@@ -67,22 +80,10 @@ a:hover li{
     justify-content: center;
     height: 50vh; 
     background-color:rgb(223, 41, 53);
-    border-radius:4px;
-    border:1px solid rgb(223, 41, 53);
    
-}
-
-.carousel-inner{
-  width:100%;
-  
-  margin: 0 auto;
-}
-
-.carousel-item img{
-   height: 50vh;
-   max-width:100%;
-   margin: 0 auto;
-
+    flex-wrap:wrap;
+    
+   
 }
 
 
@@ -91,32 +92,71 @@ a:hover li{
  *  Grid Panel
  **********************************************************************/
 .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-    grid-gap: 20px;
+	display: flex;
+    flex-wrap:wrap;
+	justify-content:center;
+
 }
+
 
 .gridItem {
-    background-color: #444;
-    padding:0;
-    margin: 20px;
-    justify-content: center;
-    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    background-color: #fff;
+    position: relative;
+  	text-align: center;
+  	color: white;
 }
 
-.gridItem img {
-    width: 100%;
+
+.gridItem   img {
+	width:400px;
+	height:264px;
+    transition: transform 1s;
 }
 
+.gridItem img:hover {
+	-webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
+          
+}
+
+.textItem {
+	position:absolute;
+	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+  	text-transform: uppercase;
+  	font-size: 2em;
+}
+
+@media only screen and (max-width: 600px) {
+    .gridItem  {
+    	
+        width:100%;
+
+    }
+
+    .gridItem  img{
+    	
+        width:100%;
+
+    }
+
+
+ }
 
 /***********************************************************************
  *  Footer
  **********************************************************************/
-footer {
+.footer {
 	text-align:center;
 	text-transform: uppercase;
 	background-color: #080708;
 	color:#fff;
-	padding: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width:100%;
+	margin: auto 0;
 
 }
